@@ -1,0 +1,26 @@
+.search__container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+.search__input {
+    width: 310px;
+    height: 40px;
+    opacity: 10%;
+    border-radius: 5px;
+    padding-right: 20px;
+    color: black;
+    border: none;
+    outline: none;
+
+}
+
+.search__icon {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}

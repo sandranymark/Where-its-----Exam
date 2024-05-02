@@ -1,0 +1,26 @@
+.nav {
+    padding: 10px;
+
+}
+
+
+/* Ul */
+.nav__links {
+    display: flex;
+    justify-content: space-around;
+    filter: drop-shadow(1px 1px 0 #000000);
+}
+
+
+.nav__list {
+    list-style: none;
+
+}
+
+/* Länkarna */
+.nav__link {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+
+}

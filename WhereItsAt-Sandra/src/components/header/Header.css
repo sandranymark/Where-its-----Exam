@@ -1,0 +1,12 @@
+.header__pink {
+    display: flex;
+    justify-content: center;
+    font-family: 'Sansita One';
+    color: #F56B9A;
+    filter: drop-shadow(1px 1px 0 #000000);
+    font-size: 32px;
+    font-weight: 500;
+    padding: 20px;
+
+
+}
