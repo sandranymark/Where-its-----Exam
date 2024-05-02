@@ -1,0 +1,100 @@
+.Event-wrapper {
+
+    margin: 0;
+    padding: 0;
+}
+
+.header__headings {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 30px 20px 30px;
+    margin-bottom: 30px;
+}
+
+.pink__heading {
+    font-family: 'Sansita One';
+    color: #F56B9A;
+    font-weight: 500;
+    font-size: 32px;
+    filter: drop-shadow(1px 1px 0 #000000);
+
+}
+
+.sub__heading {
+    width: 70%;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.main__event {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.green__heading {
+    color: #37AEAB;
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.location__heding {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.form {
+    margin-top: 6rem;
+    width: 250px;
+    height: auto;
+
+
+}
+
+.form__div {
+    display: flex;
+    font-size: 30px;
+    font-weight: 700;
+    justify-content: space-around;
+    padding: 10px 20px 10px 20px;
+    border: 2px solid #F56B9A;
+    color: white;
+}
+
+.total-price {
+    display: flex;
+    color: white;
+    filter: drop-shadow(1px 1px 0 #F56B9A);
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding: 20px 30px 20px 30px;
+    border: 2px solid #F56B9A;
+}
+
+.add__button {
+    padding: 20px 80px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    background-color: #37AEAB;
+    color: white;
+    font-size: 19px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}

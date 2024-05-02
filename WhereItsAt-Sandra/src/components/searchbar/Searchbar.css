@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     position: relative;
-
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .search__input {
-    width: 310px;
+    width: 340px;
     height: 40px;
     opacity: 10%;
     border-radius: 5px;
@@ -14,7 +15,6 @@
     color: black;
     border: none;
     outline: none;
-
 }
 
 .search__icon {

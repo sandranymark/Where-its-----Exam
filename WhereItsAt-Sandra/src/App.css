@@ -1,24 +1,31 @@
 /* @import url(./assets/fonts/SansitaOne.ttf); */
 
+:root {
+    --background-color: #231F42;
+    --background-color-gradient: linear-gradient(59deg, rgba(244, 106, 153, 1) 0%, rgba(70, 39, 103, 1) 40%, rgba(35, 31, 66, 1) 100%);
+
+    --heading-sansita-font: 'Sansita One';
+    --heading-fira-font: 'Fira Sans';
+    --heading-Libre-code: 'Libre Barcode 128';
+
+    --f-color-pink: #F56B9A;
+    --f-color-green: #37AEAB;
+}
+
 
 * {
     box-sizing: border-box;
+    margin: 0;
     padding: 0;
-
 }
 
 body {
-    background-color: #231F42;
+    background-color: var(--background-color);
     height: 100%;
-    margin: 0
-}
+    font-family: Fira Sans;
 
-.app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 .footer {
-    margin-top: auto;
+    margin-bottom: 20%;
 }

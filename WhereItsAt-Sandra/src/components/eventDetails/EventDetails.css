@@ -1,0 +1,69 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.event__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 20px 30px 20px 30px;
+}
+
+.event__heading {
+    display: flex;
+    justify-content: left;
+    font-family: 'Fira Sans';
+    color: white;
+    filter: drop-shadow(1px 1px 0 #F56B9A);
+    font-size: 22px;
+    font-weight: 500;
+
+}
+
+.event__date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+}
+
+.flex__column {
+    margin-left: 30px;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.event__place {
+    font-family: Fira Sans;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+
+}
+
+.event__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #37AEAB;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.flex__price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.line {
+    margin-left: 5.5rem;
+    width: 80%;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
