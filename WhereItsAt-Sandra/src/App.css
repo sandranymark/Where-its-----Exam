@@ -1,8 +1,17 @@
-/* @import url(./assets/fonts/SansitaOne.ttf); */
+@font-face {
+    font-family: 'Sansita One';
+    src: url('./assets/fonts/SansitaOne.ttf') format ('trutype')
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Barcode+128&display=swap");
+
 
 :root {
     --background-color: #231F42;
     --background-color-gradient: linear-gradient(59deg, rgba(244, 106, 153, 1) 0%, rgba(70, 39, 103, 1) 40%, rgba(35, 31, 66, 1) 100%);
+
+    /* --gradient: linear-gradient(180deg, #F56B9A 0%, rgba(177, 52, 254, 0) 100%) */
 
     --heading-sansita-font: 'Sansita One';
     --heading-fira-font: 'Fira Sans';

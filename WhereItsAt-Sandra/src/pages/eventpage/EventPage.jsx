@@ -10,7 +10,6 @@ function EventPage({ events }) {
     const [quantity, setQuantity] = useState(1);
     const [totalPrice, setTotalPrice] = useState(eventData.price);
 
-
     const addToCart = useCartStore(state => state.addToCart);
 
     const decreaseQuantity = () => {
@@ -26,8 +25,9 @@ function EventPage({ events }) {
     }
 
     const handleAddToCart = () => {
-        addToCart(id, events);
+        addToCart(id, events, quantity);
     }
+
 
     return (
         <div className='event-wrapper'>

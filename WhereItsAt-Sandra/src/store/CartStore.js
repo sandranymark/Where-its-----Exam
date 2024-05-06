@@ -1,15 +1,14 @@
-
 import { create } from 'zustand';
 import axios from 'axios';
 
 export const useCartStore = create((set) => ({
     cart: [],
-    addToCart: async (productId, events) => {
+    addToCart: async (productId, events, quantity) => {
         try {
             const response = await axios.get('https://santosnr6.github.io/Data/events.json');
             const product = response.data.events.find(event => event.id === productId);
             if (product) {
-                set((state) => ({ cart: [...state.cart, product] }));
+                set((state) => ({ cart: [...state.cart, { ...product, quantity }] }));
             } else {
                 console.error(`Product with id ${productId} not found.`);
             }
@@ -28,3 +27,4 @@ export const useCartStore = create((set) => ({
         }
     },
 }));
+
