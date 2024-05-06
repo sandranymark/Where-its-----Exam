@@ -29,7 +29,7 @@ function Order() {
                 return { ...item, quantity: item.quantity - 1 };
             }
             return item;
-        }).filter(item => item.quantity > 0); // Remove the product if its quantity is 0 or less
+        }).filter(item => item.quantity > 0);
         setCartItems(updatedCart);
     }
 
