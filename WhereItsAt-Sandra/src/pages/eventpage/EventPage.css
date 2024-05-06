@@ -1,17 +1,15 @@
 .Event-wrapper {
-
     margin: 0;
     padding: 0;
 }
 
 .header__headings {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px 30px 20px 30px;
+
     margin-bottom: 30px;
 }
 
@@ -21,11 +19,15 @@
     font-weight: 500;
     font-size: 32px;
     filter: drop-shadow(1px 1px 0 #000000);
+    padding: 32px 0px 20px 0px;
+}
 
+.topic-title {
+    padding-bottom: 0;
 }
 
 .sub__heading {
-    width: 70%;
+    width: 60%;
     font-family: "Fira Sans", sans-serif;
     font-weight: 100;
     font-style: italic;
@@ -55,11 +57,10 @@
 }
 
 .form {
-    margin-top: 6rem;
+    margin-top: 82px;
     width: 250px;
     height: auto;
-
-
+    cursor: pointer;
 }
 
 .form__div {
@@ -67,9 +68,9 @@
     font-size: 30px;
     font-weight: 700;
     justify-content: space-around;
-    padding: 10px 20px 10px 20px;
     border: 2px solid #F56B9A;
     color: white;
+    border-radius: 3px;
 }
 
 .total-price {
@@ -81,6 +82,7 @@
     font-size: 30px;
     padding: 20px 30px 20px 30px;
     border: 2px solid #F56B9A;
+
 }
 
 .add__button {
@@ -90,11 +92,35 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 67px;
     background-color: #37AEAB;
     color: white;
     font-size: 19px;
     font-weight: 700;
     border: none;
     cursor: pointer;
+}
+
+.minus,
+.plus,
+.number {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 30%;
+    font-weight: 100;
+}
+
+.minus {
+    border-right: 2px solid #F56B9A;
+}
+
+.plus {
+    border-left: 2px solid #F56B9A;
+}
+
+.number {
+    font-size: 20px;
+
 }

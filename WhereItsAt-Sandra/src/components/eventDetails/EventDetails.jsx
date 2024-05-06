@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import './EventDetails.css';
+import { Link } from 'react-router-dom'
 
 
 
@@ -27,22 +28,24 @@ function EventDetails() {
 
             <main className="main">
                 {events.map(event => (
-                    <div className='event__wrapper' key={event.name}>
-                        <div className="event__date">
-                            <span className="day">{formatEventDate(event.when.date).day}</span>
-                            <span className="month">{formatEventDate(event.when.date).monthAbbrev}</span>
-                        </div>
-                        <section className="flex__column">
-                            <h1 className="event__heading">{event.name}</h1>
-                            <p className="event__place">{event.where}</p>
-                            <p className="event__time">{event.when.from}-{event.when.to}</p>
-                        </section>
-                        <section className='flex__price'>
-                            <p className='event__price'>{event.price} sek</p>
-                        </section>
-                        <div className="line"></div>
-                    </div>
+                    <Link className="link" to={`/event/${event.id}`} key={event.id}>
+                        <div className='event__wrapper'>
 
+                            <div className="event__date">
+                                <span className="day">{formatEventDate(event.when.date).day}</span>
+                                <span className="month">{formatEventDate(event.when.date).monthAbbrev}</span>
+                            </div>
+                            <section className="flex__column">
+                                <h1 className="event__heading">{event.name}</h1>
+                                <p className="event__place">{event.where}</p>
+                                <p className="event__time">{event.when.from}-{event.when.to}</p>
+                            </section>
+                            <section className='flex__price'>
+                                <p className='event__price'>{event.price} sek</p>
+                            </section>
+                            <div className="line"></div>
+                        </div>
+                    </Link>
                 ))}
             </main>
 
@@ -52,3 +55,23 @@ function EventDetails() {
 }
 
 export default EventDetails;
+
+
+// {events.map(event => (
+//     <div className='event__wrapper' key={event.name}>
+//         <div className="event__date">
+//             <span className="day">{formatEventDate(event.when.date).day}</span>
+//             <span className="month">{formatEventDate(event.when.date).monthAbbrev}</span>
+//         </div>
+//         <section className="flex__column">
+//             <h1 className="event__heading">{event.name}</h1>
+//             <p className="event__place">{event.where}</p>
+//             <p className="event__time">{event.when.from}-{event.when.to}</p>
+//         </section>
+//         <section className='flex__price'>
+//             <p className='event__price'>{event.price} sek</p>
+//         </section>
+//         <div className="line"></div>
+//     </div>
+
+// ))}

@@ -1,32 +1,57 @@
-import './EventPage.css'
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import './EventPage.css';
+import { useCartStore } from '../../store/CartStore';
 
-function EventPage() {
+function EventPage({ events }) {
+    const { id } = useParams();
+    const eventData = events.find(event => event.id === id);
+
+    const [quantity, setQuantity] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(eventData.price);
+
+
+    const addToCart = useCartStore(state => state.addToCart);
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
+            setTotalPrice(totalPrice - eventData.price);
+        }
+    }
+
+    const increaseQuantity = () => {
+        setQuantity(quantity + 1);
+        setTotalPrice(totalPrice + eventData.price);
+    }
+
+    const handleAddToCart = () => {
+        addToCart(id, events);
+    }
+
     return (
-        <>
-            <div className='event-wrapper'>
-                <header className='header__headings'>
-                    <h1 className='pink__heading'>Event</h1>
-                    <h2 className='sub__heading'>You are about to score some tickets to</h2>
-                </header>
+        <div className='event-wrapper'>
+            <header className='header__headings'>
+                <h1 className='pink__heading '>Event</h1>
+                <h2 className='sub__heading'>You are about to score some tickets to</h2>
+            </header>
+            <main className='main__event'>
+                <h1 className='pink__heading topic-title'>{eventData.name}</h1>
+                <p className='green__heading'>{eventData.when.date} kl {eventData.when.from}-{eventData.when.to}</p>
+                <p className='location__heding'>@ {eventData.where}</p>
 
-                <main className='main__event'>
-                    <h1 className='pink__heading'>Lasse Stefanz</h1>
-                    <p className='green__heading'>21 mars kl 19.00-21.00</p>
-                    <p className='location__heding'>@ Kjell Härnqvistsalen</p>
-
-                    <form className='form'>
-                        <h2 className='total-price'>1050 sek</h2>
-                        <div className='form__div'>
-                            <p className='minus'>-</p>
-                            <p className='number'>3</p>
-                            <p className='plus'>+</p>
-                        </div>
-                    </form>
-                </main>
-                <button className='add__button'>Lägg i Varukorg</button>
-            </div>
-        </>
+                <form className='form'>
+                    <h2 className='total-price'>{totalPrice} sek</h2>
+                    <div className='form__div'>
+                        <p className='minus' onClick={decreaseQuantity}>-</p>
+                        <p className='number'>{quantity}</p>
+                        <p className='plus' onClick={increaseQuantity}>+</p>
+                    </div>
+                </form>
+            </main>
+            <button className='add__button' onClick={handleAddToCart}>Lägg i Varukorg</button>
+        </div>
     )
 }
 
-export default EventPage
+export default EventPage;

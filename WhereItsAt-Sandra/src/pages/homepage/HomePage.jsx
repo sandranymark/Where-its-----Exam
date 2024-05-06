@@ -4,7 +4,7 @@ function HomePage() {
     return (
         <>
 
-            <div>
+            <div className='home-page'>
                 <Logo />
             </div>
 

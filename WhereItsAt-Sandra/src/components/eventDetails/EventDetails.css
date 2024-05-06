@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     justify-content: left;
     padding: 20px 30px 20px 30px;
+
 }
 
 .event__heading {
@@ -66,4 +67,9 @@
     width: 80%;
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
 }

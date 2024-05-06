@@ -1,0 +1,8 @@
+.order-page h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0px 52px 0px;
+    filter: drop-shadow(1px 1px 0 #000000);
+}
