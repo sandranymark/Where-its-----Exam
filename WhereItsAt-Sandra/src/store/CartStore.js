@@ -8,7 +8,16 @@ export const useCartStore = create((set) => ({
             const response = await axios.get('https://santosnr6.github.io/Data/events.json');
             const product = response.data.events.find(event => event.id === productId);
             if (product) {
-                set((state) => ({ cart: [...state.cart, { ...product, quantity }] }));
+                set((state) => {
+                    const productIndex = state.cart.findIndex(item => item.id === productId);
+                    if (productIndex !== -1) {
+                        const newCart = [...state.cart];
+                        newCart[productIndex].quantity += quantity;
+                        return { cart: newCart };
+                    } else {
+                        return { cart: [...state.cart, { ...product, quantity }] };
+                    }
+                });
             } else {
                 console.error(`Product with id ${productId} not found.`);
             }
@@ -16,7 +25,18 @@ export const useCartStore = create((set) => ({
             console.error('Error adding product to cart:', error);
         }
     },
-    removeFromCart: (productId) => set((state) => ({ cart: state.cart.filter(product => product.id !== productId) })),
+    removeFromCart: (productId) => {
+        set((state) => {
+            const productIndex = state.cart.findIndex(product => product.id === productId);
+            if (state.cart[productIndex].quantity > 1) {
+                const newCart = [...state.cart];
+                newCart[productIndex].quantity -= 1;
+                return { cart: newCart };
+            } else {
+                return { cart: state.cart.filter(product => product.id !== productId) };
+            }
+        });
+    },
     clearCart: () => set({ cart: [] }),
     fetchEvents: async () => {
         try {
@@ -27,4 +47,3 @@ export const useCartStore = create((set) => ({
         }
     },
 }));
-

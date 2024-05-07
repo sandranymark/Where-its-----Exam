@@ -1,41 +1,22 @@
-
 import { useEffect, useState } from 'react';
 import './Order.css';
 import { useCartStore } from '../../store/CartStore';
 
 function Order() {
     const [cartItems, setCartItems] = useState([]);
-
-    const cart = useCartStore(state => state.cart);
-    const fetchEvents = useCartStore(state => state.fetchEvents);
-
-    useEffect(() => {
-        fetchEvents();
-    }, [fetchEvents]);
-
-    const increaseQuantity = (productId) => {
-        const updatedCart = cartItems.map(item => {
-            if (item.id === productId) {
-                return { ...item, quantity: item.quantity + 1 };
-            }
-            return item;
-        });
-        setCartItems(updatedCart);
-    }
-
-    const decreaseQuantity = (productId) => {
-        const updatedCart = cartItems.map(item => {
-            if (item.id === productId && item.quantity > 0) {
-                return { ...item, quantity: item.quantity - 1 };
-            }
-            return item;
-        }).filter(item => item.quantity > 0);
-        setCartItems(updatedCart);
-    }
+    const { cart, addToCart, removeFromCart } = useCartStore();
 
     useEffect(() => {
         setCartItems(cart);
     }, [cart]);
+
+    const increaseQuantity = (productId) => {
+        addToCart(productId, 1); // Lägger till en artist i varukorgen/ordern
+    };
+
+    const decreaseQuantity = (productId) => {
+        removeFromCart(productId); // Tar bort artisten/produkten från varukorgen/ordern
+    };
 
     const totalPrice = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
 
