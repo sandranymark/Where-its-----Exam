@@ -1,16 +1,17 @@
 .main__wrapper--ticket {
     width: 100vw;
-    height: 80vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin: 40px 40px 0px 0px;
 }
 
 .section__ticket--container {
     width: 80%;
-    height: 500px;
+    height: 500x;
     background-color: #FFFFFF;
+    border-radius: 3px;
 }
 
 .ticket__artist {
@@ -57,10 +58,96 @@
 
 .when__section {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.06);
+    ;
 }
 
 .when__container {
     border-right: 2px dotted rgba(0, 0, 0, 0.4);
     border-top: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.from__container {
+    border-right: 2px dotted rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.to__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+}
+
+.when__text,
+.from__text,
+.to__text,
+.info__text {
+    padding: 10px 55px 10px 0px;
+    font-family: var(--heading-fira-font, 'Fira Sans');
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.when__date,
+.from__time,
+.to__time {
+    padding: 0px 20px 10px 0px;
+    font-family: var(--heading-fira-font, 'Fira Sans');
+    color: rgba(0, 0, 0, 60%);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.to__time {
+    padding: 0px 10px 10px 0px;
+}
+
+.info__section {
+    background: rgba(0, 0, 0, 0.09);
+}
+
+.info__text {
+    padding: 10px 0px 0px 10px;
+}
+
+.info__seat {
+    padding: 10px 0px 10px 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12;
+}
+
+.randomId__section {
+    background: rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.randomid__code {
+    font-family: var(--heading-Libre-code), sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 101px;
+    padding: 30px 0px 0px 0px;
+}
+
+.randomid__text {
+    font-family: var(--heading-fira-font);
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: -25px;
+    padding: 0px 0px 30px 0px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }

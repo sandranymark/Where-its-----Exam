@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import './Order.css';
 import { useCartStore } from '../../store/CartStore';
+import NoTickets from '../../assets/images/No-tickets.jpg';
+import { Link } from 'react-router-dom';
+
 
 function Order() {
     const [cartItems, setCartItems] = useState([]);
-    const { cart, addToCart, removeFromCart } = useCartStore();
+    const { cart, addToCart, removeFromCart, sendOrder } = useCartStore();
 
     useEffect(() => {
         setCartItems(cart);
@@ -42,11 +45,16 @@ function Order() {
                     <section className='order__section--total'>
                         <h2 className='sub__heading order__sub'>Totalt värde på order</h2>
                         <h2 className='order__total-price'>{totalPrice} sek</h2>
-                        <button className='add__button order__button'>Skicka order</button>
+                        <Link to="/ticket">
+                            <button className='add__button order__button' onClick={() => sendOrder()}>Skicka order</button>
+                        </Link>
                     </section>
                 </div>
             ) : (
-                <p>You have to place an order first, RETARD!.</p>
+                <section className='No__order'>
+                    <p>You have to place an order first, DUMBASS!</p>
+                    <img className='old__lady' src={NoTickets} alt="No tickets" />
+                </section>
             )}
         </section>
     );
