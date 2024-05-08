@@ -25,7 +25,7 @@ function EventPage({ events }) {
     }
 
     const handleAddToCart = () => {
-        addToCart(id, events, quantity);
+        addToCart(id, quantity);
     }
 
 

@@ -2,6 +2,7 @@ import SearchIcon from '../../assets/icons/search-icon.svg'
 import './Searchbar.css'
 
 
+
 function Searchbar() {
     return (
         <>

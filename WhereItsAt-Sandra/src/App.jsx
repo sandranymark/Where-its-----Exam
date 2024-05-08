@@ -5,7 +5,7 @@ import HomePage from './pages/homepage/HomePage';
 import EventsPage from './pages/eventsPage/EventsPage';
 import EventPage from './pages/eventpage/EventPage';
 import OrderPage from './pages/orderpage/OrderPage';
-import AddToCartPage from './pages/AddToCartPage';
+
 import TicketPage from './pages/ticketpage/TicketPage';
 import Footer from './components/footer/Footer';
 import './App.css'
@@ -28,7 +28,7 @@ function App() {
         <Route path="/events" element={<EventsPage events={events} />} />
         <Route path="/event/:id" element={<EventPage events={events} />} />
         <Route path="/orders" element={<OrderPage />} />
-        <Route path="/addtocart" element={<AddToCartPage />} />
+
         <Route path="/tickets" element={<TicketPage />} />
       </Routes>
       <Footer />

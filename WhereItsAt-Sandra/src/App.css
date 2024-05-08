@@ -10,9 +10,6 @@
 :root {
     --background-color: #231F42;
     --background-color-gradient: linear-gradient(59deg, rgba(244, 106, 153, 1) 0%, rgba(70, 39, 103, 1) 40%, rgba(35, 31, 66, 1) 100%);
-
-    /* --gradient: linear-gradient(180deg, #F56B9A 0%, rgba(177, 52, 254, 0) 100%) */
-
     --heading-sansita-font: 'Sansita One';
     --heading-fira-font: 'Fira Sans';
     --heading-Libre-code: 'Libre Barcode 128';
