@@ -1,4 +1,7 @@
+
+
 import { create } from 'zustand';
+import { useTicketStore } from './TicketStore';
 import axios from 'axios';
 
 const useCartStore = create((set) => ({
@@ -9,16 +12,10 @@ const useCartStore = create((set) => ({
             const response = await axios.get('https://santosnr6.github.io/Data/events.json');
             const product = response.data.events.find(event => event.id === productId);
             if (product) {
-                set((state) => {
-                    const productIndex = state.cart.findIndex(item => item.id === productId);
-                    if (productIndex !== -1) {
-                        const newCart = [...state.cart];
-                        newCart[productIndex].quantity += quantity;
-                        return { cart: newCart };
-                    } else {
-                        return { cart: [...state.cart, { ...product, quantity }] };
-                    }
-                });
+                const seats = useTicketStore.getState().generateSeat(product.artist, quantity);
+                set((state) => ({
+                    cart: [...state.cart, { ...product, quantity, seats }]
+                }));
             } else {
                 console.error(`Product with id ${productId} not found.`);
             }
@@ -26,6 +23,7 @@ const useCartStore = create((set) => ({
             console.error('Error adding product to cart:', error);
         }
     },
+
     removeFromCart: (productId) => {
         set((state) => {
             const productIndex = state.cart.findIndex(product => product.id === productId);
@@ -42,57 +40,10 @@ const useCartStore = create((set) => ({
     sendOrder: () => {
         set((state) => ({
             orderdItems: [...state.orderdItems, ...state.cart],
-            cart: [] // Clear the cart after sending the order
+            cart: []
         }));
     }
 }));
 
 export { useCartStore };
 
-
-// import { create } from 'zustand';
-// import { useTicketStore } from './TicketStore';
-// import axios from 'axios';
-
-// const useCartStore = create((set) => ({
-//     cart: [],
-//     orderdItems: [],
-//     addToCart: async (productId, quantity) => {
-//         try {
-//             const response = await axios.get('https://santosnr6.github.io/Data/events.json');
-//             const product = response.data.events.find(event => event.id === productId);
-//             if (product) {
-//                 const seats = useTicketStore.getState().generateSeat(product.artist, quantity);
-//                 set((state) => ({
-//                     cart: [...state.cart, { ...product, quantity, seats }]
-//                 }));
-//             } else {
-//                 console.error(`Product with id ${productId} not found.`);
-//             }
-//         } catch (error) {
-//             console.error('Error adding product to cart:', error);
-//         }
-//     },
-
-//     removeFromCart: (productId) => {
-//         set((state) => {
-//             const productIndex = state.cart.findIndex(product => product.id === productId);
-//             if (state.cart[productIndex].quantity > 1) {
-//                 const newCart = [...state.cart];
-//                 newCart[productIndex].quantity -= 1;
-//                 return { cart: newCart };
-//             } else {
-//                 return { cart: state.cart.filter(product => product.id !== productId) };
-//             }
-//         });
-//     },
-//     clearCart: () => set({ cart: [] }),
-//     sendOrder: () => {
-//         set((state) => ({
-//             orderdItems: [...state.orderdItems, ...state.cart],
-//             cart: []
-//         }));
-//     }
-// }));
-
-// export { useCartStore };

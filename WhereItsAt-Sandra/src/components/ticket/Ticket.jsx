@@ -7,7 +7,9 @@ function Ticket({ ticket }) {
     const { generateId, generateSeat } = useTicketStore();
 
     const randomId = generateId(generateId);
-    const seat = ticket ? generateSeat(ticket.isGroup) : 'Not assigned';
+    const seat = ticket ? generateSeat(ticket.quantity) : 'Not assigned';
+
+
     return (
         <div>
             <main className='main__wrapper--ticket'>
