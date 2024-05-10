@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './EventPage.css';
 import { useCartStore } from '../../store/CartStore';
+import { BsDash, BsPlus } from 'react-icons/bs';
 
 function EventPage({ events }) {
     const { id } = useParams();
@@ -43,9 +44,9 @@ function EventPage({ events }) {
                 <form className='form'>
                     <h2 className='total-price'>{totalPrice} sek</h2>
                     <div className='form__div'>
-                        <p className='minus' onClick={decreaseQuantity}>-</p>
+                        <p className='minus' onClick={decreaseQuantity}><BsDash /></p>
                         <p className='number'>{quantity}</p>
-                        <p className='plus' onClick={increaseQuantity}>+</p>
+                        <p className='plus' onClick={increaseQuantity}><BsPlus /></p>
                     </div>
                 </form>
             </main>

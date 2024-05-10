@@ -3,6 +3,7 @@ import './Order.css';
 import { useCartStore } from '../../store/CartStore';
 import NoTickets from '../../assets/images/No-tickets.jpg';
 import { Link } from 'react-router-dom';
+import { BsDash, BsPlus } from 'react-icons/bs';
 
 
 function Order() {
@@ -35,9 +36,9 @@ function Order() {
                                     <p className='green__heading green__heading--small'>{product.when.date} kl {product.when.from}-{product.when.to}</p>
                                 </section>
                                 <div className='form__div'>
-                                    <p className='minus' onClick={() => decreaseQuantity(product.id)}>-</p>
+                                    <p className='minus' onClick={() => decreaseQuantity(product.id)}><BsDash /></p>
                                     <p className='number'>{product.quantity}</p>
-                                    <p className='plus' onClick={() => increaseQuantity(product.id)}>+</p>
+                                    <p className='plus' onClick={() => increaseQuantity(product.id)}><BsPlus /></p>
                                 </div>
                             </form>
                         </div>
