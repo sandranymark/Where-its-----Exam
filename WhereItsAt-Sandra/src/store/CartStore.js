@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const useCartStore = create((set) => ({
     cart: [],
-    orderdItems: [],
+    orderedItems: [],
     addToCart: async (productId, quantity) => {
         try {
             const response = await axios.get('https://santosnr6.github.io/Data/events.json');
@@ -42,7 +42,7 @@ const useCartStore = create((set) => ({
     clearCart: () => set({ cart: [] }),
     sendOrder: () => {
         set((state) => ({
-            orderdItems: [...state.orderdItems, ...state.cart],
+            orderedItems: [...state.orderedItems, ...state.cart],
             cart: [] // Clear the cart after sending the order
         }));
     }
