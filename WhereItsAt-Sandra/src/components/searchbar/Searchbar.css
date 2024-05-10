@@ -7,7 +7,7 @@
 }
 
 .search__input {
-    width: 340px;
+    width: 85%;
     height: 40px;
     opacity: 10%;
     border-radius: 5px;
@@ -15,12 +15,21 @@
     color: black;
     border: none;
     outline: none;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .search__icon {
     position: absolute;
-    left: 50px;
     top: 50%;
+    right: 10%;
     transform: translateY(-50%);
+    font-size: 24px;
+    color: #231f42;
+    margin: auto;
+}
 
+.search__input:focus {
+    border: 2px solid #231f42;
+    opacity: 100%;
 }
