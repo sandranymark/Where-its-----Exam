@@ -1,7 +1,9 @@
 import Ticket from '../../components/ticket/Ticket';
 import { useCartStore } from '../../store/CartStore';
+import './Ticketpage.css';
+
 const TicketService = {
-    generateSeats: function(orderedItems) {
+    generateSeats: function (orderedItems) {
 
         const sections = [
             { name: 'A', seats: 10 },
@@ -40,25 +42,25 @@ function TicketPage() {
     console.log("Ordered Items: ", orderedItems);
     const tickets = TicketService.generateSeats(orderedItems);
     console.log("Tickets: ", tickets);
-    
-    const generateSeats = function(orderedItems) {
+
+    const generateSeats = function (orderedItems) {
         console.log(orderedItems);
-        
+
         return orderedItems;
     }
 
 
     return (<>
-            <div className="Ticketpage">
-                {orderedItems.length > 0 ? (
-                    <div>
-                        {tickets.map((ticket, index) => (<Ticket key={index} ticket={ticket}/>))}
-                    </div>
-                    ) : (
-                        <p>No items in the order</p>
-                )}
-            </div>
-        </>);
+        <div className="Ticketpage">
+            {orderedItems.length > 0 ? (
+                <div>
+                    {tickets.map((ticket, index) => (<Ticket key={index} ticket={ticket} />))}
+                </div>
+            ) : (
+                <p>No items in the order</p>
+            )}
+        </div>
+    </>);
 }
 
 export default TicketPage;

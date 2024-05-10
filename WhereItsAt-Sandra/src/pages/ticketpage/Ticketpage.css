@@ -1,4 +1,4 @@
 .Ticketpage {
-    height: 100vh;
+    /* height: 100vh; */
     background: linear-gradient(180deg, rgba(244, 106, 153, 1) 0%, rgba(70, 39, 103, 1) 40%, rgba(35, 31, 66, 1) 100%);
 }
