@@ -14,8 +14,9 @@ function Ticket({ ticket }) {
         return { day, monthAbbrev: month.substring(0, 3).toUpperCase() };
     };
 
-    // Antag att ticket.when.date är "13 december"
+
     const { day, monthAbbrev } = formatEventDate(ticket.when.date);
+
 
 
 
@@ -64,4 +65,3 @@ function Ticket({ ticket }) {
 }
 
 export default Ticket;
-

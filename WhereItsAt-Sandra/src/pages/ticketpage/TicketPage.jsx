@@ -4,6 +4,7 @@ import { useCartStore } from '../../store/CartStore';
 function TicketPage() {
     const { orderdItems } = useCartStore();
 
+
     return (
         <div className="Ticketpage">
             {orderdItems.length > 0 ? (
