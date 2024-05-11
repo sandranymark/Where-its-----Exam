@@ -4,8 +4,8 @@ import { useTicketStore } from '../../store/TicketStore';
 import Barcode from 'react-barcode';
 
 function Ticket({ ticket }) {
-    
-    const { generateId, generateSeat } = useTicketStore();
+
+    const { generateId } = useTicketStore();
     const randomId = generateId();
 
     const formatEventDate = (dateString) => {

@@ -26,35 +26,6 @@ const useTicketStore = create((set, get) => ({
 
         return ticketId;
     },
-
-    generateSeat: (artist, quantity) => {
-        const artistTickets = get().tickets.filter(ticket => ticket.artist === artist);
-
-        const generateConsecutiveSeats = (section, lastSeat, quantity) => {
-            const seats = [];
-            for (let i = 0; i < quantity; i++) {
-                seats.push(`Section ${section} - seat ${lastSeat + i + 1}`);
-            }
-            return seats;
-        }
-
-        const generateRandomSeat = () => {
-            const sections = ['A', 'B', 'C', 'D', 'E'];
-            const section = sections[Math.floor(Math.random() * sections.length)];
-            const seat = Math.floor(Math.random() * 500) + 1;
-            return [`Section ${section} - seat ${seat}`];
-        }
-
-        if (artistTickets.length > 0) {
-            const lastTicket = artistTickets[artistTickets.length - 1];
-            const section = lastTicket.section;
-            const lastSeat = parseInt(lastTicket.seat.split(' ')[3]);
-            return generateConsecutiveSeats(section, lastSeat, quantity);
-        } else {
-            return generateRandomSeat();
-        }
-    },
-
 }));
 
 export { useTicketStore };
