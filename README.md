@@ -12,7 +12,7 @@ Ditt uppdrag är att koda ihop en frontend till biljettjänsten Where its @. Den
 - Avancerad statehantering med externt bibliotek (ex Zustand)
 
 
-## För att uppnå kraven för Välgodkänt har jag använt följande externa bibliotek:
+## För att uppnå kraven för välgodkänt har jag använt följande externa bibliotek:
   - [react-icons](https://react-icons.github.io/react-icons/)  :  Detta bibliotek ger tillgång till ett stort antal ikoner från olika ikonbibliotek, såsom Font Awesome, Material Icons, och många fler.<br>
  Jag har använt react-icons för + och - som knappar för att lägga till och ta bort produkter på mina ordrar/beställningar istället för att använda vanliga + och - variablerna.
 
